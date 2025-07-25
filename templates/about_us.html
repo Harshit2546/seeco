@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color:  #E5E5E5;
+
+    }
+    .certifications-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 40px;
+        margin: 40px auto 0 auto;
+        max-width: 900px;
+        flex-wrap: wrap;
+    }
+    .certification-item {
+        text-align: center;
+        flex: 1 1 200px;
+        max-width: 220px;
+    }
+    .certification-img {
+        width: 196px;
+        height: 196px;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .certification-img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(60,76,107,0.18);
+    }
+    .certification-name {
+        margin-top: 12px;
+        font-weight: 600;
+        color: #3C4C6B;
+        font-size: 1.1rem;
+    }
+    .certification-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.cert-image {
+  flex: 0 0 300px;
+  text-align: center;
+}
+
+.cert-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.cert-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cert-text {
+  flex: 1 1 400px;
+  color: #3C4C6B;
+  font-size: 1rem;
+}
+
+.cert-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.certification-name {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #3C4C6B;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .certification-flexbox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-image,
+  .cert-text {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+</style>
+
+<!-- Add a Google Font for a modern look -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
+<div style="max-width: 900px; margin: 40px auto 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
+    <h1 style="color: #222; margin-top: 0;">Seeco Industries</h1>
+    
+    <h2 style="color: #444;">Who We Are</h2>
+    <p>
+       We are an ISO 9001:2015 certified company , based in Mohan Nagar and are trusted manufacturer of leaf springs for trucks and other commercial vehicles. Established in the year 2000, we have grown consistently under the leadership of our Chairman, Mr. Prashant Jain.
+    </p>
+    <p>
+        With over 25 years of experience, we have become a reliable name in the commercial vehicle components industry, both in India and abroad.
+    </p>
+    
+    <h2 style="color: #444;">Our Journey</h2>
+    <p>
+        From a small-scale unit to a well-recognized industry name, Seeco has come a long way. Our continuous focus on quality, innovation, and customer satisfaction has helped us grow steadily over the years.
+    </p>
+    <p>
+        We are proud to say that we have built long-term relationships with our customers, suppliers, and business partners based on trust, performance, and consistency.
+    </p>
+    
+    <h2 style="color: #444;">Manufacturing Excellence</h2>
+    <ul>
+        <li>Strength and durability</li>
+        <li>Accurate fit and finish</li>
+        <li>High performance in tough conditions</li>
+    </ul>
+    <p>
+        We are equipped with state-of-the-art machinery and modern production facilities that help us manufacture leaf springs as per exact client requirements.
+        Our dedicated team of skilled professionals and engineers ensures that every product passes strict quality checks before delivery.
+    </p>
+    
+    <h2 style="color: #444;">Reputation in the Market</h2>
+    <ul>
+        <li>Consistently delivering top-quality products</li>
+        <li>Fulfilling bulk orders on time</li>
+        <li>Offering fair pricing and dependable service</li>
+    </ul>
+    <p>
+        Our name is respected among commercial vehicle manufacturers, dealers, and exporters, and we are proud to be considered a preferred supplier in the leaf spring industry.
+    </p>
+    
+    <h2 style="color: #444;">Global Reach</h2>
+    <p>
+        In recent years, we have expanded our presence in international markets, and today we proudly export leaf springs to several countries. Our goal is to continue growing globally while maintaining the same values that made us successful in India.
+    </p>
+    
+    <h2 style="color: #444;">Our Commitment</h2>
+    <ul>
+        <li>Providing high-quality products</li>
+        <li>Ensuring customer satisfaction</li>
+        <li>Promoting innovation and continuous improvement</li>
+    </ul>
+    <p>
+        We believe in building long-term partnerships through trust, quality, and value.
+    </p>
+
+<h2 style="color: #444;">Certifications</h2>
+<div class="certifications-container" style="display: flex; flex-direction: column; gap: 40px; margin-top: 20px;">
+    <!-- First Certification -->
+        <div class="certification-flexbox">
+        <!-- Image -->
+        <div class="cert-image">
+            <a href="{{'/media/certificates/iso9001.pdf'}}" target="_blank">
+            <img src="{% static 'img/iso9001.png' %}" alt="ISO 9001:2015" />
+            </a>
+            <div class="certification-name">ISO 9001:2015</div>
+        </div>
+
+        <!-- Text -->
+        <div class="cert-text">
+            <h3>ISO 9001:2015 Certification</h3>
+            <p>
+            Seeco Industries is proud to be ISO 9001:2015 certified for the design and manufacturing of leaf springs. This internationally recognized certification reflects our strong commitment to quality management, customer satisfaction, and continuous improvement.
+            </p>
+            <p>
+            Our ISO 9001:2015 compliance ensures that every leaf spring we produce meets the highest standards of performance, safety, and reliability—making us a trusted partner in the automotive and industrial sectors.
+            </p>
+        </div>
+        </div>
+
+    <!-- Second Certification -->
+    <div class="certification-flexbox">
+        <!-- PDF and Image -->
+        <div class="cert-image">
+            <a href="{{'/media/certificates/iec.pdf'}}" target="_blank">
+            <img src="{% static 'img/iec.png' %}" alt="ISO 9001:2015" />
+            </a>
+            <div class="certification-name">Registered Importer & Exporter – IEC Certified</div>
+        </div>
+        <!-- Text Information -->
+        <div style="flex: 2; font-family: 'Roboto', Arial, sans-serif; color: #3C4C6B;">
+            <h3 style="margin: 0; font-size: 1.5rem;">Registered Importer & Exporter – IEC Certified</h3>
+            <p style="margin: 10px 0; font-size: 1rem;">
+                Seeco Industries is a government-registered entity with a valid Importer Exporter Code (IEC) issued by the Directorate General of Foreign Trade (DGFT), India. This certification enables us to legally export our high-quality leaf springs worldwide and import materials essential for our manufacturing excellence.
+            </p>
+            <p style="margin: 10px 0; font-size: 1rem;">
+                Our IEC registration reflects our commitment to global trade compliance and positions us as a reliable partner for international clients and distributors.
+            </p>
+        </div>
+    </div>
+
+    <!-- Third Certification -->
+    <div class="certification-flexbox">
+        <!-- PDF and Image -->
+        <div style="flex: 1; text-align: center;">
+            <a href="{{'/media/certificates/gst.pdf'}}" target="_blank">
+                <img src="{% static 'img/gst.png' %}" alt="GST Certificate" class="certification-img" style="width: 300px; height: 300px;">
+            </a>
+            <div class="certification-name">GST Certificate</div>
+        </div>
+        <!-- Text Information -->
+        <div style="flex: 2; font-family: 'Roboto', Arial, sans-serif; color: #3C4C6B;">
+            <h3 style="margin: 0; font-size: 1.5rem;">GST Registered Business – Transparent & Compliant</h3>
+            <p style="margin: 0px 0; font-size: 1rem;">
+                Seeco Industries is fully GST registered under the Goods and Services Tax regime of India, ensuring complete tax compliance and transparency in all our business transactions.
+            </p>
+            <p style="margin: 10px 0; font-size: 1rem;">
+                Our GST registration allows us to serve customers across India efficiently, while maintaining clear and lawful invoicing for both B2B and B2C operations.
+            </p>
+            <p style="margin: 10px 0; font-size: 1rem;">
+                For all purchases and supplies, our GSTIN is available on official invoices and can be verified through the government portal.
+            </p>
+        </div>
+        
+
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

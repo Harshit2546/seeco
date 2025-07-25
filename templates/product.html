@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="display: flex; gap: 40px; max-width: 1200px; margin: 40px auto; font-family: 'Roboto', Arial, sans-serif;">
+<div style="max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
+
+<div style="max-width: 1000px; margin: 0px auto 30px; padding: 0px; font-family: 'Roboto', Arial, sans-serif;">
+  <h1 style="color: #222; font-size: 2.2rem; margin-bottom: 10px;">Your Trusted Manufacturer for Durable & Customized Leaf Springs</h1>
+  
+  <p style="font-size: 1rem; color: #444; line-height: 1.8;">
+    As a leading name in the Indian suspension component industry, our company is committed to delivering high-quality leaf spring solutions for all types of vehicles—from compact cars and electric rickshaws to heavy-duty trucks and commercial trailers. With decades of experience and a skilled engineering team, we not only manufacture standard leaf spring assemblies but also specialize in crafting **customized leaf springs** tailored to the specific load, size, and ride quality needs of our clients. Whether you're a fleet operator, OEM supplier, or aftermarket distributor, we work closely with you to ensure perfect compatibility and performance.
+  </p>
+
+  <p style="font-size: 1rem; color: #444; line-height: 1.8;">
+    Our product range includes:
+    <strong>Parabolic Leaf Springs</strong> for superior ride comfort and durability, 
+    <strong>Conventional Multi-Leaf Springs</strong> for rugged load-bearing use, 
+    <strong>E-Rickshaw Leaf Spring Assemblies</strong> for lightweight electric vehicles, 
+    <strong>Truck and Trailer Springs</strong> designed for long-haul stability, and 
+    <strong>Jeep and Passenger Car Springs</strong> optimized for balanced suspension in everyday use.
+  </p>
+
+  <p style="font-size: 1rem; color: #444; line-height: 1.8;">
+    What sets us apart is our commitment to quality manufacturing. Every product is crafted using advanced processes such as **automated camber forming, heat treatment, shot peening, bushing pressing, and powder coating** to meet or exceed industry standards like IS:1135. We use high-grade raw materials like <strong>EN 45A, SUP9, and 60Si2Mn</strong> to ensure strength, flexibility, and long fatigue life. Custom solutions are offered in terms of spring length, leaf count, eye type (open/closed), bushing material (rubber/bronze/PU), and finish (black enamel, powder-coated, or zinc-plated).
+  </p>
+
+  <p style="font-size: 1rem; color: #444; line-height: 1.8;">
+    Our leaf springs are compatible with a wide range of vehicle models in India, including:
+    <strong>Tata Ace, Tata 407, Tata Yodha, BharatBenz 2823/2828, Ashok Leyland Dost, Mahindra Bolero, Commander 750, Jeep 150, Marshall, FC 360D, Maximo, Gio, Load King, Scorpio, Tavera, Maruti 800, Ambassador</strong>, and more. For electric mobility, we also supply fully assembled **E-Rickshaw spring sets (commonly 24-inch)** ready for direct fitment with U-bolts, clamps, and bushings.
+  </p>
+
+  <p style="font-size: 1rem; color: #444; line-height: 1.8;">
+    Backed by reliable service, timely delivery, and client-centric production runs, we are proud to be a preferred choice for leaf spring solutions in India’s automotive supply chain. Whether you require a standard part or a custom batch, we are here to support your suspension needs with precision, performance, and long-term reliability.
+  </p>
+</div>
+</div>
+<div style="max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
+<h1 style="color: #222; margin-top:0px; align-items: center;">Our Products</h1>
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 40px; align-items: center; ">
+    <!-- Card 1 -->
+        <a href="{% url "parabolic"%}" class="product-card">
+            <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="{% static 'img/parabolic.jpg' %}" alt="Product 1" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 10px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Parabolic Leaf Spring</h3>
+                </div>
+            </div>
+        </a>
+
+    <!-- Card 2 -->
+        <!--<a href={% url "truck_leaf_spring"%} class="product-card">
+            <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="{% static 'img/truck.jpg' %}" alt="Product 2" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 10px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Truck Leaf Spring</h3>
+                </div>
+            </div>
+        </a>-->
+
+    <!-- Card 3 -->
+        <a href={% url "erickshaw_leaf_spring"%} class="product-card">
+            <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="{% static 'img/e-rickshaw.jpg' %}" alt="Product 3" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 10px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">E-Rickshaw Leaf Spring</h3>
+                </div>
+            </div>
+        </a>
+    <!-- Card 4 -->
+        <a href={% url "trialer_leaf_spring"%} class="product-card">
+            <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="{% static 'img/trailer.jpg' %}" alt="Product 4" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 10px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Trailer Assembly Leaf Spring</h3>
+                </div>
+            </div>
+        </a>
+
+    <!-- Card 5 -->
+       <!-- <a href={% url "conventional_leaf_spring"%} class="product-card">
+            <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                <img src="{% static 'img/conventional.jpg' %}" alt="Product 5" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 10px; text-align: center;">
+                    <h3 style="margin: 0; font-size: 1.5rem;">Conventional Leaf Spring</h3>
+                </div>
+            </div>
+        </a>-->
+</div>
+</div>
+</div>
+{% endblock %}

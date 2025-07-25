@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="width: 100vw; margin: 20px; padding: 0;">
+    <!-- Full-width Carousel -->
+<div id="carousel" style="position: relative; width: 100vw; height:90vh; overflow: hidden; margin: 0; padding: 0;">
+        <img src="{% static 'img/index1.png' %}" class="carousel-img active" style="width:100vw; height:100vh; object-fit:cover;  transition: opacity 0.5s;">
+        <img src="{% static 'img/Index3.jpg' %}" class="carousel-img" style="width:100vw; height:100vh; object-fit:cover;  transition: opacity 0.5s;">
+    </div>
+</div>
+
+<div style="max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
+    <h1 style="color: #222; margin-top: 0;">Seeco Industries</h1>
+    
+    <h2 style="color: #444;">Who We Are</h2>
+    <p>
+        We are an ISO 9001:2015 certified company, based in Mohan Nagar and are trusted manufacturers of leaf springs for trucks and other commercial vehicles. Established in the year 2000, we have grown consistently under the leadership of our Chairman, Mr. Prashant Jain.
+    </p>
+    <p>
+        With over 25 years of experience, we have become a reliable name in the commercial vehicle components industry, both in India and abroad.
+    </p>
+    <button type="button" onclick="location.href='{% url 'about_us' %}'" style="background: #3C4C6B; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: background 0.2s;">Learn More</button>
+</div>
+<div style="max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
+<h1 style="color: #222; margin-top: 0;">Our Product</h1>
+    <div style="margin: 40px auto; max-width: 1200px; padding: 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+
+        <!-- CARD 1 -->
+        <a href="{% url "parabolic"%}" class="product-card" >
+                <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{% static 'img/parabolic.jpg' %}" alt="Product 1" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 10px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">Parabolic Leaf Spring</h3>
+                    </div>
+                </div>
+        </a>
+
+        <!-- CARD 2 -->
+       <!-- <a href={% url "truck_leaf_spring"%} class="product-card">
+                <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{% static 'img/truck.jpg' %}" alt="Product 2" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 10px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">Truck Leaf Spring</h3>
+                    </div>
+                </div>
+        </a>-->
+
+        <!-- CARD 3 -->
+        <a href={% url "erickshaw_leaf_spring"%} class="product-card">
+                <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{% static 'img/e-rickshaw.jpg' %}" alt="Product 3" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 10px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">E-Rickshaw Leaf Spring</h3>
+                    </div>
+                </div>
+        </a>
+
+        <!-- CARD 4 -->
+        <a href={% url "trialer_leaf_spring"%} class="product-card">
+                <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{% static 'img/trailer.jpg' %}" alt="Product 4" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 10px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">Trailer Assembly Leaf Spring</h3>
+                    </div>
+                </div>
+        </a>
+
+        <!-- CARD 5 -->
+        <!--<a href={% url "conventional_leaf_spring"%} class="product-card">
+                <div style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{% static 'img/conventional.jpg' %}" alt="Product 5" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 10px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">Conventional Leaf Spring</h3>
+                    </div>
+                </div>
+        </a>-->
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-img');
+
+    function showSlide(index) {
+        slides.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+        setInterval(() => {
+            nextSlide();
+        }, 4000); // Change slide every 3 seconds
+    }
+
+    showSlide(currentSlide);
+    startCarousel();
+</script>
+{% endblock %}

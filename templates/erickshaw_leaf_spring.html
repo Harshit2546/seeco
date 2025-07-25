@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem;
+}
+.contact-form {
+    flex: 1 1 320px;
+    min-width: 260px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #3C4C6B;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 16px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f7f7f7;
+    resize: vertical;
+}
+.contact-form textarea {
+    min-height: 80px;
+    max-height: 200px;
+}
+.contact-form button {
+    background: #3C4C6B;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #25304a;
+}
+.location-box {
+    flex: 1 1 320px;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.location-box h3 {
+    color: #3C4C6B;
+    margin-bottom: 12px;
+}
+.location-iframe {
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 280px;
+    max-width: 400px;
+}
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .location-iframe {
+        min-height: 220px;
+    }
+}
+</style>
+<div style="width: 100vw; margin: 0; padding: 0;">
+    <!-- Full-width Carousel -->
+    <div id="carousel" style="position: relative; width: 100vw; height: 100vh; overflow: hidden; margin: 0; padding: 0;">
+        <img src="{% static 'img/erickshaw.jpg' %}" class="carousel-img active" style="width:100vw; height:100vh; object-fit:cover; transition: opacity 0.5s;">
+        <img src="{% static 'img/e-rickshaw.jpg' %}" class="carousel-img" style="width:100vw; height:100vh; object-fit:cover; transition: opacity 0.5s;">
+    </div>
+</div>
+
+<div style="display: flex; gap: 40px; max-width: 1200px; margin: 40px auto; font-family: 'Roboto', Arial, sans-serif;">
+    <!-- Main Content Container -->
+    <div style="flex: 2; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem;">
+        <h1 style="color: #222; margin-top: 0;">E-Rickshaw Leaf Springs</h1>
+        <p style="font-size: 1rem; color: #333; line-height: 1.6;">
+            We specialize in manufacturing complete E-Rickshaw Leaf Spring Assemblies designed for low-speed electric vehicles used in last-mile mobility. Our assemblies are optimized for high load capacity, long fatigue life, and cost-effectiveness while maintaining comfort on uneven urban roads.
+        </p>
+        <h2 style="color: #444; margin-top: 40px;">📐 Technical Specifications – E-Rickshaw Leaf Spring Assembly</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 1rem; color: #333;">
+            <thead>
+                <tr style="background-color: #f8f9fa; border: 1px solid #ddd;">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Parameter</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Specification Range</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Type</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Multi-leaf Spring / Parabolic Mini Spring</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Material</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">EN45A / SUP9 / 60Si2Mn</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Total Leaves</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">3 to 7 leaves (stacked)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Leaf Thickness</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">4 mm – 6 mm</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Leaf Width</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">38 mm – 45 mm</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Overall Length</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">22 to 26 inches (commonly 24-inch standard)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Spring Eye Type</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Closed Eye or Open Eye (Pressed/Bushed)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Bushing Type</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Rubber / PU / Bronze (on request)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Load Capacity</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">500 kg – 800 kg (per axle)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Finish</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Black enamel / Powder-coated / Zinc coating</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Clamps</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 to 2 U-bolt clamp plates (4 mm or 5 mm thick)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Center Bolt Size</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">8 mm – 10 mm</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Assembly Type</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Complete Set with Center Bolt, Clamp, and Eye Bush</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Testing Standards</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IS:1135, E-rickshaw chassis fitment test</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Our Products Section -->
+    <div style="flex: 1; background: #f8f9fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 1.5rem;">
+        <h2 style="color: #444; margin-top: 0;">Our Products</h2>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+            <a href="{% url 'parabolic' %}" style="text-decoration: none; color: #007bff; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-size: 1rem;">
+                Parabolic Leaf Spring
+            </a>
+            <!--<a href="{% url 'truck_leaf_spring' %}" style="text-decoration: none; color: #007bff; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-size: 1rem;">
+                  Truck Leaf Spring
+            </a>-->
+            <!--<a href="{% url 'conventional_leaf_spring' %}" style="text-decoration: none; color: #007bff; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-size: 1rem;">
+                Conventional Leaf Spring
+            </a>-->
+            <a href="{% url 'trialer_leaf_spring' %}" style="text-decoration: none; color: #007bff; background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); font-size: 1rem;">
+                Trailer Leaf Spring
+            </a>
+        </div>
+    <h2 style="color: #444; margin-top: 20px;">Contact Us</h2>
+        <div class="contact-container" style="margin-top: 10px;">
+            <form class="contact-form" method="post" action="{% url 'contact_us' %}">
+                {% csrf_token %}
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9+\-\s]{7,15}">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="comment">Comment</label>
+                <textarea id="comment" name="comment" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-img');
+
+    function showSlide(index) {
+        slides.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+        showSlide(currentSlide);
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+        showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+        setInterval(() => {
+            nextSlide();
+        }, 3000); // Change slide every 3 seconds
+    }
+
+    showSlide(currentSlide);
+    startCarousel();
+</script>
+{%endblock%}
