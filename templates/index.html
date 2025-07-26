@@ -6,7 +6,7 @@
     <!-- Full-width Carousel -->
 <div id="carousel" style="position: relative; width: 100vw; height:90vh; overflow: hidden; margin: 0; padding: 0;">
         <img src="{% static 'img/index1.png' %}" class="carousel-img active" style="width:100vw; height:100vh; object-fit:cover;  transition: opacity 0.5s;">
-        <img src="{% static 'img/Index3.jpg' %}" class="carousel-img" style="width:100vw; height:100vh; object-fit:cover;  transition: opacity 0.5s;">
+        <img src="{% static 'img/index3.jpg' %}" class="carousel-img" style="width:100vw; height:100vh; object-fit:cover;  transition: opacity 0.5s;">
     </div>
 </div>
 
@@ -23,7 +23,7 @@
     <button type="button" onclick="location.href='{% url 'about_us' %}'" style="background: #3C4C6B; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: background 0.2s;">Learn More</button>
 </div>
 <div style="max-width: 1100px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 2rem; font-family: 'Roboto', Arial, sans-serif;">
-<h1 style="color: #222; margin-top: 0;">Our Product</h1>
+{% comment %} <h1 style="color: #222; margin-top: 0;">Our Product</h1> {% endcomment %}
     <div style="margin: 40px auto; max-width: 1200px; padding: 20px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
 
         <!-- CARD 1 -->
